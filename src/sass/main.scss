@@ -1,7 +1,12 @@
 $base-font-size: 28px;
+@mixin md {
+    @media (max-width: 768px) {
+        @content;
+    }
+}
 
-@mixin ph {
-    @media (max-width: 700px) {
+@mixin lg {
+    @media (max-width: 992px) {
         @content;
     }
 }
@@ -14,13 +19,10 @@ body {
     font-size: $base-font-size;
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     line-height: 1.5;
-
     @include ph {
-            color: #fff;
-            background-color: black;
+        color: #fff;
+        background-color: black;
     }
 }
-
-
 
 @import "block/*.scss";
